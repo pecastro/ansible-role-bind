@@ -48,6 +48,13 @@ options {
 
   querylog yes;
 {% endif %}
+
+{% if bind_response_policy is defined %}
+
+  response-policy {zone "{{ bind_response_policy }}";};
+{% endif %}
+
+
 };
 
 {% if bind_statistics_channels %}
